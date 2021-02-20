@@ -2,7 +2,12 @@ const express = require('express');
 
 const app = express();
 
+const logger = require('./middleware/logger')
+
 const port = process.env.PORT || 3000;
+
+
+app.use(logger)
 //set ejs as a view engine
 app.set('view engine', 'ejs');
 //set the views folder
